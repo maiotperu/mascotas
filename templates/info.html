@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Información del Perro</title>
+</head>
+<body>
+    <h1>Información del Perro</h1>
+    <p>_id: {{ data._id }}</p>
+    <p>Nombres: {{ data.nombres }}</p>
+    <p>Apellidos: {{ data.apellidos }}</p>
+    <p>Dirección: {{ data.direccion }}</p>
+    <p>Raza: {{ data.raza }}</p>
+    <p>Sexo: {{ data.sexo }}</p>
+    <p>Edad: {{ data.edad }}</p>
+    <p>Descripción: {{ data.descripcion }}</p>
+    <p>Estado: {{ data.estado }}</p>
+    <p>Teléfono: {{ data.telefono }}</p>
+    <p>Correo: {{ data.correo }}</p>
+    
+    <p>Imagen:</p>
+    <img src="data:image/jpeg;base64,{{ image }}" alt="Imagen del perro" width="300">
+    
+    <p>Imagen de fondo:</p>
+    <img src="data:image/jpeg;base64,{{ image_fondo }}" alt="Imagen de fondo" width="300">
+    
+</body>
+</html>

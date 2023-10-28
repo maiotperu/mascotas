@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %} Mascotas {% endblock%}
+
+{% block links %}
+
+
+{% endblock %}
+
+{% block contenido_body %}
+<div class="profile-area">
+    <div class="container">
+        <div class="row">
+            <div class="mt-5 col-md-6">
+                <div class="card">
+                    <div class="img1"><img src="{{ url_for('static', filename='imgs/fondo-perro.png') }}" alt=""></div>
+                    <a href="{{ url_for('perros') }}">
+                        <div class="img2"><img src="{{ url_for('static', filename='imgs/perro.png') }}" alt=""></div>
+                    </a>
+                    
+                    <div class="main-text">
+                        <h2>Perros</h2>
+                        <p>Leales, juguetones, fieles, protectores, amorosos, curiosos, amigables, inteligentes, leales, afectuosos.</p>
+                    </div>
+                     <!--
+                    <div class="socials">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-linkedin"></i>
+                        <i class="fa fa-dribbble"></i>
+                        <i class="fa fa-twitter"></i>
+                    </div>
+                    -->
+                </div>
+            </div>
+            <div class="mt-5 col-md-6">
+                <div class="card">
+                    <div class="img1"><img src="{{ url_for('static', filename='imgs/fondo-gato.png') }}" alt=""></div>
+                    <a href="{{ url_for('gatos') }}">
+                        <div class="img2"><img src="{{ url_for('static', filename='imgs/gato.png') }}" alt=""></div>
+                    </a>
+                    
+                    <div class="main-text">
+                        <h2>Gatos</h2>
+                        <p>Independientes, curiosos, ágiles, misteriosos, cariñosos, juguetones, limpios, sigilosos, elegantes.</p>
+                    </div>
+                    <!--
+                    <div class="socials">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-linkedin"></i>
+                        <i class="fa fa-dribbble"></i>
+                        <i class="fa fa-twitter"></i>
+                    </div>
+                    -->
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Perros {% endblock%}
+
+{% block contenido_body %}
+<div class="profile-area">
+    <div class="container">
+        <div class="row">
+            {% for item in data_list %}
+                <div class="mt-5 col-md-3">
+                    <div class="card">
+                        <div class="img1"><img src="data:image/jpeg;base64,{{ item.image_fondo_base64 }}" alt=""></div>
+                        <a href="{{ url_for('perro', custom_id=item.document._id) }}">
+                            <div class="img2"><img src="data:image/jpeg;base64,{{ item.image_base64 }}" alt=""></div>
+                        </a>
+                        <div class="main-text">
+                            <h2>{{ item.document.nombres }}</h2>
+                            <p> 
+                                {% if item.document.estado == "Perdido" %}
+                                    <span class="letra-roja">{{item.document.estado}}</span>
+                                {% else %}
+                                    <span class="letra-normal">{{item.document.estado}}</span>
+                                {% endif %}
+                            </p>
+                    
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}           
+        </div>
+    </div>
+</div>
+{% endblock %}

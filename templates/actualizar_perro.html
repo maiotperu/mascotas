@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualización de Mascotas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5 mb-5">Patitas y Caricias - Actualización de Perros</h1>
+    </div>
+    <div class="container">
+        <div class="row row-col-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="text-center">Mascotas</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <div class="row row-col-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-3">
+                                {% for product in products %}
+                                    <div class="col">
+                                        <li class="list-group-item mb-3">
+                                            <form action="/edit/{{product._id}}" method="POST">
+                                                <!-- Agrega una etiqueta para mostrar la imagen -->
+                                                <img src="/images/{{product._id}}" alt="Product Image" width="100" height="100">
+                                                <input type="text" class="form-control" value="{{product._id}}" name="_id">
+                                                <small>Nombres</small>
+                                                <input type="text" class="form-control" value="{{product.nombres}}" name="nombres">
+                                                <small>Apellidos</small>
+                                                <input type="text" class="form-control" value="{{product.apellidos}}" name="apellidos">
+                                                <small>Direccion</small>
+                                                <input type="text" class="form-control" value="{{product.direccion}}" name="direccion">
+                                                <small>Raza</small>
+                                                <input type="text" class="form-control" value="{{product.raza}}" name="raza">
+                                                <small>Sexo</small>
+                                                <input type="text" class="form-control" value="{{product.sexo}}" name="sexo">
+                                                <small>Edad</small>
+                                                <input type="text" class="form-control" value="{{product.edad}}" name="edad">
+                                                <small>Descripcion</small>
+                                                <input type="text" class="form-control" value="{{product.descripcion}}" name="descripcion">
+                                                <small>Estado</small>
+                                                <input type="text" class="form-control" value="{{product.estado}}" name="estado">
+                                                <small>Telefono</small>
+                                                <input type="text" class="form-control" value="{{product.telefono}}" name="telefono">
+                                                <small>Correo</small>
+                                                <input type="text" class="form-control" value="{{product.correo}}" name="correo">
+                                                <small>Facebook</small>
+                                                <input type="text" class="form-control" value="{{product.facebook}}" name="facebook">
+                                                <small>Instagram</small>
+                                                <input type="text" class="form-control" value="{{product.instagram}}" name="instagram">
+                                                <small>Tiktok</small>
+                                                <input type="text" class="form-control" value="{{product.tiktok}}" name="tiktok">
+
+                                                <button class="btn btn-primary btn-sm mt-3" type="submit">Editar</button>
+                                                <a href="{{url_for('delete', product_id=product._id)}}" class="btn btn-danger btn-sm mt-3">Eliminar</a>
+                                            </form>
+                                        </li>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
